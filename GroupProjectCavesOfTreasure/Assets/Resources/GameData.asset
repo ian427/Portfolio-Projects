@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef0c657b595dd54daeed820cbba8acd, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  Furniture:
+  - {fileID: 21300000, guid: 2617517a332bad844bedfb50465d35e4, type: 3}
+  - {fileID: 21300000, guid: 63d126e7d1d040747a26e5bc4c04d952, type: 3}
+  - {fileID: 21300000, guid: e9ac9595515bf87479ad3777388f6449, type: 3}
+  - {fileID: 21300000, guid: 2162c5fb8da908044af28101c435ae28, type: 3}
+  - {fileID: 21300000, guid: 337213200fd1cc345ba683ea649f5c5e, type: 3}
+  - {fileID: 21300000, guid: 774418951c6cfdd4886f2ddafcdcab83, type: 3}
+  - {fileID: 21300000, guid: 79ee789f3bffecc4d82da17f86edec38, type: 3}
+  - {fileID: 21300000, guid: 350be8a62a6365a429cc0176ff5a3333, type: 3}
+  - {fileID: 21300000, guid: e4c409c8c58e46e43a5dd6891a78ca20, type: 3}
+  - {fileID: 21300000, guid: f85f2953944ad1f40b2b2eb2df0eb847, type: 3}
+  - {fileID: 21300000, guid: 956196badab5d98439da7a8b9b11cfe2, type: 3}
+  - {fileID: 21300000, guid: 4a08dd7576e14f940bf64c19c22f460c, type: 3}
+  - {fileID: 21300000, guid: c491c7665cdae3f4691a5f6056867ff5, type: 3}
+  - {fileID: 21300000, guid: a5d3fc3c811b06040a565993bcd3505e, type: 3}
+  - {fileID: 21300000, guid: 3c24bd95ae9ff0f44aabe8ca5689559a, type: 3}
+  - {fileID: 21300000, guid: 85b0b85b8541c6648a318a403f55cba9, type: 3}
+  - {fileID: 21300000, guid: 998b92612b5371c478b4b0166e2d7246, type: 3}
+  - {fileID: 21300000, guid: fa1e69a6ab583dc40a14238a37383115, type: 3}
+  - {fileID: 21300000, guid: f3d9ad92897774345b0fc7131acb1fbb, type: 3}
+  - {fileID: 21300000, guid: 3fe4b2912246683449434826d3c94f67, type: 3}
+  - {fileID: 21300000, guid: 7fccc8ce553046f4488c12c525ba6f3c, type: 3}
+  - {fileID: 21300000, guid: dcbfa40b6eb984f4d8702629ad56f14b, type: 3}
+  - {fileID: 21300000, guid: dd2cd1dc1c9c2ac4292e47936d25830d, type: 3}
+  - {fileID: 21300000, guid: 1e8f9c34eb877bf4d93dc5b17536899f, type: 3}
+  - {fileID: 21300000, guid: 466d3080ee1a91349aa0b6d78e900eb8, type: 3}
+  - {fileID: 21300000, guid: d406905c42a9e534b98620a11ea3daad, type: 3}
+  - {fileID: 21300000, guid: a95693434901d2645a3f5450d6d79129, type: 3}
+  - {fileID: 21300000, guid: 9812730b4bce9ef4cb48cfcdf8eea770, type: 3}
+  - {fileID: 21300000, guid: c734ddc41b7693941a5619841402ea39, type: 3}
+  - {fileID: 21300000, guid: e68dae60d35a1ea47a6ca908916a5b8c, type: 3}
+  - {fileID: 21300000, guid: f118d22df3391094f9d4ce0088af90ef, type: 3}
+  - {fileID: 21300000, guid: e1281b9adf9809549914cb7b7865f52e, type: 3}
+  - {fileID: 21300000, guid: 286a3f2d9708de045bf3ee325ab151a3, type: 3}
+  - {fileID: 21300000, guid: 3e2449493758d0a49be458746e422d57, type: 3}
+  - {fileID: 21300000, guid: 4d259eae35f3dae41936936a50569cc4, type: 3}
+  - {fileID: 21300000, guid: 24941e56e57678e4fa10bd0110426a2d, type: 3}
+  - {fileID: 21300000, guid: f038865adeabefc46956515b397d2198, type: 3}
+  - {fileID: 21300000, guid: 43c6077be2064464d92b3ccbdf2f8088, type: 3}
+  - {fileID: 21300000, guid: 18fe49e03ec26cb4490de149bd9aa02c, type: 3}
+  - {fileID: 21300000, guid: fc4f242ad2f6ef447904942ef64f605b, type: 3}
+  - {fileID: 21300000, guid: 89aa13832f598bb44be10dca4b521616, type: 3}
+  - {fileID: 21300000, guid: 56915f5fc95844a47bacac0af01d3b47, type: 3}
+  - {fileID: 21300000, guid: 29a5ebaad50690345afedf2791e8df25, type: 3}
+  - {fileID: 21300000, guid: d75fae248fb447546be2a5223a4bdf9f, type: 3}
+  - {fileID: 21300000, guid: ab00aece0194b924a95b5dc0ab833b9f, type: 3}
+  - {fileID: 21300000, guid: 41d91ee578e362449a1da157a363b6f5, type: 3}
+  - {fileID: 21300000, guid: 5c6384d2daaecb040b973bbd0c3219d0, type: 3}
+  - {fileID: 21300000, guid: 478d88906cea8124595b4d8ef7d09c5d, type: 3}
+  - {fileID: 21300000, guid: a8262a9929edc804a9f33ad0a2e7f040, type: 3}
+  - {fileID: 21300000, guid: 016733a3724ba2042afb4fa780706881, type: 3}
+  - {fileID: 21300000, guid: 0b50ca2426171c54f92a51e88a2621f9, type: 3}
+  - {fileID: 21300000, guid: 38a7789f5b0bebf43bb2adf414a2aa90, type: 3}
+  - {fileID: 21300000, guid: 229a5b6f258149f499706670fa879c17, type: 3}
+  - {fileID: 21300000, guid: f8037a84d33c82b41b0ed55294139321, type: 3}
+  AmountOfFurniture: 020000000300000001000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  TotalItiems: 1
+  Gold: 10
+  Diamond: 5
+  Gem: 2
+  Path: C:/Users/Games/Documents/GitHub/GroupProjectCavesOfTreasure/Assets
+  CurrentlyDisplayedT1:
+  - {fileID: 21300000, guid: 9812730b4bce9ef4cb48cfcdf8eea770, type: 3}
+  - {fileID: 21300000, guid: 85b0b85b8541c6648a318a403f55cba9, type: 3}
+  - {fileID: 21300000, guid: 4a08dd7576e14f940bf64c19c22f460c, type: 3}
+  CurrentlyDisplayedT2:
+  - {fileID: 21300000, guid: 41d91ee578e362449a1da157a363b6f5, type: 3}
+  - {fileID: 21300000, guid: 286a3f2d9708de045bf3ee325ab151a3, type: 3}
+  currentlydisplayedT3: {fileID: 21300000, guid: 5c6384d2daaecb040b973bbd0c3219d0, type: 3}
+  LastRewardDate: 638833341719636170
+  CurrentNumberOfHunts: 0
+  CurrentlyPlacedFurniture:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
