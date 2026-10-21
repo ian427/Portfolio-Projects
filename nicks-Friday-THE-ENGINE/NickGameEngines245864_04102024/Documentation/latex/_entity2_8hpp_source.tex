@@ -1,0 +1,203 @@
+\doxysection{Entity2.\+hpp}
+\hypertarget{_entity2_8hpp_source}{}\label{_entity2_8hpp_source}\index{NickEnginesS245864\_01102024/Entity2.hpp@{NickEnginesS245864\_01102024/Entity2.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}BitMaps.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}MyEventTypes.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}EventHandler.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}physics.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//base\ class\ in\ vector\ with\ virtual\ methods\ each\ child\ of\ base\ overloads\ that\ method}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{struct\ }SDL\_Renderer;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_base_entity}{BaseEntity}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00013\ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ SDL\_Renderer*\ m\_Renderer;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_physics}{Physics}}\ phi;\textcolor{comment}{//copy}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \textcolor{keywordtype}{float}\ Radius;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \mbox{\hyperlink{class_bitmap}{Bitmap}}*\ Map;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \mbox{\hyperlink{class_collider}{Collider}}*\ \ BoxCollider;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \mbox{\hyperlink{class_transform}{Transform}}\ transform;\textcolor{comment}{//26,27\ getting\ this\ transforms\ data\ not\ flappys}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \mbox{\hyperlink{class_transform}{Transform}}\&\ GetTransform()\ \{\ \textcolor{keywordflow}{return}\ transform;\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Draw()\textcolor{comment}{//genral\ class\ ?}}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Map-\/>m\_x\ =\ transform.GetPosition().x;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Map-\/>m\_y\ =\ transform.GetPosition().y;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Map-\/>draw();}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \mbox{\hyperlink{class_collider}{Collider}}*\ GetCollider()}
+\DoxyCodeLine{00031\ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BoxCollider;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{float}\ GetRadius()}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ Radius;}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ApplyContinuousMoment()\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }Bird\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i___event_handeler}{I\_EventHandeler}}\ ,\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_base_entity}{BaseEntity}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//collider\ }}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ \ gravity}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//Hit\ Object}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//bitmap}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//phiysics\ check}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//anything\ that\ needs\ to\ move}}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//Transform\ transform;}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//Transform\ Transform\{\ vec3\{320.0f,\ 240.0f,\ 0.0f\}\ \};}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ Radius\{\ 10.0f\ \};}
+\DoxyCodeLine{00060\ \ \ \ \ SDL\_Renderer*\ m\_Renderer;}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ Bird(SDL\_Renderer*\ renderer)\ :\ m\_Renderer\{renderer\}}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ transform\ =\ vec3\{\ 320.0f,\ 240.0f,\ 0.0f\ \};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_bitmap}{Bitmap}}(m\_Renderer,\ \textcolor{stringliteral}{"{}assets/Flappy.bmp"{}},\ transform.GetPosition().x,\ transform.GetPosition().y);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ BoxCollider\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_collider}{Collider}}(transform);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \string~Bird()}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ BoxCollider;\ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//delete\ Map;}}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyContinuousMoment()}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ phi.Move(transform,\ vec3(0,\ 1,\ 0));}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ OnEvent(MyEventTypes\ eventType,\ \mbox{\hyperlink{class_event}{Event}}*\ data)}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (eventType)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SPACE\_PRESSED:}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ phi.Move(transform,\ vec3(0,\ -\/2,\ 0));}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ CollisionCheck(\ \mbox{\hyperlink{class_base_entity}{BaseEntity}}*\ CollidingAgainst)\textcolor{comment}{//\ needs\ to\ the\ the\ derived\ class}}
+\DoxyCodeLine{00095\ \ \ \ \ \{\textcolor{comment}{//calculates\ the\ position\ and\ hoe\ far\ apart\ so\ we\ can\ find\ where\ to\ check\ radii\ from\ }}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ Dx\ =\ transform.GetPosition().x\ -\/\ CollidingAgainst-\/>GetTransform().GetPosition().x;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ Dy\ =\ transform.GetPosition().y\ -\/\ CollidingAgainst-\/>GetTransform().GetPosition().y;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ D\ =\ (sqrt((Dx\ *\ Dx)\ +\ (Dy\ *\ Dy)));}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((D\ ==\ Radius\ +\ CollidingAgainst-\/>GetRadius())\ ||\ (D\ ==\ Radius\ -\/\ CollidingAgainst-\/>GetRadius()))\textcolor{comment}{//circle\ collision\ check}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (phi.AABBIntersection(BoxCollider,\ CollidingAgainst-\/>GetCollider()))}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{class\ }Pipe\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_base_entity}{BaseEntity}}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ topPipe\ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ inuse\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//spawning}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//bitmap}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//collider\ }}
+\DoxyCodeLine{00121\ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//Collider*\ BoxCollider;}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{float}\ Radius;}
+\DoxyCodeLine{00124\ \ \ \ \ Transform\ Transform;}
+\DoxyCodeLine{00125\ \ \ \ \ SDL\_Renderer*\ m\_Renderer;}
+\DoxyCodeLine{00126\ \ \ \ \ Pipe(\textcolor{keywordtype}{bool}\ value)\ :\ topPipe(value)\ }
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ BoxCollider\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_collider}{Collider}}(Transform);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (topPipe)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ Map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_bitmap}{Bitmap}}(m\_Renderer,\ \textcolor{stringliteral}{"{}assets/Pipes3Top.bmp"{}},\ transform.GetPosition().x,\ transform.GetPosition().y);\textcolor{comment}{//\ loads\ top\ pipe\ png}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ Map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_bitmap}{Bitmap}}(m\_Renderer,\ \textcolor{stringliteral}{"{}assets/Pipes3Bottom.bmp"{}},\ transform.GetPosition().x,\ transform.GetPosition().y);\textcolor{comment}{//loads\ bottom\ pipe\ png}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \string~Pipe()}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyContinuousMoment()}
+\DoxyCodeLine{00145\ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ phi.Move(transform,\ vec3(-\/1,0,\ 0));}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{class\ }Ground\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_base_entity}{BaseEntity}}}
+\DoxyCodeLine{00151\ \{}
+\DoxyCodeLine{00152\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{//bitmap}}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//collider\ }}
+\DoxyCodeLine{00155\ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{comment}{//Collider*\ BoxCollider;}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{float}\ Radius;}
+\DoxyCodeLine{00158\ \ \ \ \ Transform\ Transform;}
+\DoxyCodeLine{00159\ \ \ \ \ SDL\_Renderer*\ m\_Renderer;}
+\DoxyCodeLine{00160\ \ \ \ \ Ground()}
+\DoxyCodeLine{00161\ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ BoxCollider\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_collider}{Collider}}(Transform);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ Map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_bitmap}{Bitmap}}(m\_Renderer,\ \textcolor{stringliteral}{"{}assets/Ground.bmp"{}},\ transform.GetPosition().x,\ transform.GetPosition().y);}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \string~Ground()}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyContinuousMoment()}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \};}
+\DoxyCodeLine{00175\ \textcolor{keyword}{class\ }UI\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_base_entity}{BaseEntity}}}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//bitmap}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//collider\ }}
+\DoxyCodeLine{00180\ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//Collider*\ BoxCollider;}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{float}\ Radius;}
+\DoxyCodeLine{00183\ \ \ \ \ Transform\ Transform;}
+\DoxyCodeLine{00184\ \ \ \ \ SDL\_Renderer*\ m\_Renderer;}
+\DoxyCodeLine{00185\ \ \ \ \ UI()}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ BoxCollider\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_collider}{Collider}}(Transform);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ Map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_bitmap}{Bitmap}}(m\_Renderer,\ \textcolor{stringliteral}{"{}assets/UI.bmp"{}},\ transform.GetPosition().x,\ transform.GetPosition().y);}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \string~UI()}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyContinuousMoment()}
+\DoxyCodeLine{00195\ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \};}
+
+\end{DoxyCode}

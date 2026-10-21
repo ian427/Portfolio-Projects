@@ -1,0 +1,54 @@
+\doxysection{Components.\+h}
+\hypertarget{_components_8h_source}{}\label{_components_8h_source}\index{NickEnginesS245864\_01102024/Components.h@{NickEnginesS245864\_01102024/Components.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Transform.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\#include\ "{}physics.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//give\ new\ box\ collider\ ....\ this\ is\ a\ factory\ method,\ look\ it\ up}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_commponent}{Commponent}}\ \textcolor{comment}{//should\ this\ be\ an\ interface}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Update()\ =0;}
+\DoxyCodeLine{00010\ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \textcolor{keyword}{class\ }Collider\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_commponent}{Commponent}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ vec3\ TL\ =\ vec3(0,\ 0,\ 0);}
+\DoxyCodeLine{00019\ \ \ \ \ vec3\ TR\ =\ vec3(1,\ 0,\ 0);}
+\DoxyCodeLine{00020\ \ \ \ \ vec3\ BL\ =\ vec3(0,\ -\/1,\ 0);}
+\DoxyCodeLine{00021\ \ \ \ \ vec3\ BR\ =\ vec3(1,\ -\/1,\ 0);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ Width;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ Height;}
+\DoxyCodeLine{00024\ \ \ \ \ Collider(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_transform}{Transform}}\&\ \ t)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ vec3\ Pos\ =\ t.GetPosition();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ vec3\ Scale\ =\ t.GetScale();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ TR\ =\ TR\ *\ Scale;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ TL\ =\ TL\ *\ Scale;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ BR\ =\ BR\ *\ Scale;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ BL\ =\ BL\ *\ Scale;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ TR\ =\ TR\ +\ Pos;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ TL\ =\ TL\ +\ Pos;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ BR\ =\ BR\ +\ Pos;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ BL\ =\ BL\ +\ Pos;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ Width\ =\ (TR.x\ -\/\ TL.x);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Height\ =\ (TR.y\ -\/\ BR.y);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ vec3\ GetColliderPoints();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update()}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

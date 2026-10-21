@@ -1,0 +1,13 @@
+Objective: Multiplayer game where players need to eat a power berry to then eat other players to score points via the networking topic
+
+what i need 
+a way for a player to leave the game and everyone else Log in/out indipendantly
+collision// probably some vrsion of aabb
+a way of creating a non player game object
+have the game loop work
+archuitect/identify possible hack and implement attempts to prevent possible identified hacks 
+out of order packets/information//nick
+check if crash/crash protection
+load management
+possible hacks
+fudging movement to teleport

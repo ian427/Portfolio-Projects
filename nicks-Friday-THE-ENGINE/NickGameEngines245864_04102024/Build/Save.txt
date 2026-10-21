@@ -1,0 +1,3 @@
+0, ./assets\Seed.bmp, 0, Default 1812, 518, 0, 
+0, ./assets\Seed.bmp, 0, Default 1757, 396, 0, 
+0, ./assets\Seed.bmp, 0, Default 1731, 337, 0, 

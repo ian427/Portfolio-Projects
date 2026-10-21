@@ -1,0 +1,105 @@
+\doxysection{Bit\+Maps.\+h}
+\hypertarget{_bit_maps_8h_source}{}\label{_bit_maps_8h_source}\index{NickEnginesS245864\_01102024/BitMaps.h@{NickEnginesS245864\_01102024/BitMaps.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ }}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}SDL\_ttf.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }SDL\_Surface;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }SDL\_Texture;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }SDL\_Renderer;}
+\DoxyCodeLine{00008\ \textcolor{comment}{//useing\ namespace\ std}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }Bitmap}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ SDL\_Surface*\ m\_pbitmapSurface;}
+\DoxyCodeLine{00013\ \ \ \ \ SDL\_Texture*\ m\_pbitmapTexture;}
+\DoxyCodeLine{00014\ \ \ \ \ SDL\_Renderer*\ m\_pbitmapRenderer;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \string~Bitmap();}
+\DoxyCodeLine{00019\ \ \ \ \ Bitmap(SDL\_Renderer*\ renderer,\ std::string\ fileName,\ \textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos,\ \textcolor{keywordtype}{bool}\ useTransparancy\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ draw();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ GetX();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ GetY();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ SetX(\textcolor{keywordtype}{int}\ temppos);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ SetY(\textcolor{keywordtype}{int}\ temppos);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_x,\ m\_y\ ,\ ID;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsSelected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ FileName;}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ ObjectName;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ SDL\_Texture*\ GetTextureRef()}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_pbitmapTexture;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ SDL\_rect\ imagerect.x;}
+\DoxyCodeLine{00039\ SDL\_rect\ imagerect.y;}
+\DoxyCodeLine{00040\ SDL\_rect\ imagerect.h;}
+\DoxyCodeLine{00041\ SDL\_rect\ imagerect.w;}
+\DoxyCodeLine{00042\ \ getx()}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ imagerect.x;}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ gety()}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ imagerect.y;}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ geth()}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ imagerect.h;}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ getw()}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ imagerect.w;}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//log4cplus}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keywordflow}{for}\ bitmap\ hierarchy}
+\DoxyCodeLine{00063\ sdlpoint\ cursor}
+\DoxyCodeLine{00064\ cursor.x}
+\DoxyCodeLine{00065\ cursor.y}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ x,y}
+\DoxyCodeLine{00067\ sdl\ mouse\ state}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ x\ \&\&\ y}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ \textcolor{keywordflow}{if}\ sdl\ point\ in\ rect\ object(cousoe,\ image\ rect\&\&\ mouse\ clicked)}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ draw}
+\DoxyCodeLine{00076\ \textcolor{keywordflow}{if}\ selected\ =\ !null}
+\DoxyCodeLine{00077\ \textcolor{comment}{//window\ area}}
+\DoxyCodeLine{00078\ begin}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{int}[postemp][2]}
+\DoxyCodeLine{00080\ postemp[1]\ ==\ getx\ of\ selected\ obj}
+\DoxyCodeLine{00081\ postemp[1]\ ==\ gety\ of\ selected\ obj}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{char}\ buff[255]\{\};}
+\DoxyCodeLine{00084\ strncpy(buff,obj-\/>objectname.c\_str,\textcolor{keyword}{sizeof}(buff)-\/1)}
+\DoxyCodeLine{00085\ imput\ text\ (\textcolor{stringliteral}{"{}name"{}}obj-\/>ojectname.data(),\ 10)}
+\DoxyCodeLine{00086\ obj\ -\/>\ objectname}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ imgui\ text\ \textcolor{keywordtype}{object}\ name.c\_str}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ imgui\ dragint2(\textcolor{stringliteral}{"{}name"{}},postemp)}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ obi-\/>setx(postemp[1])}
+\DoxyCodeLine{00093\ obi-\/>\ sety(postemp[1])}
+\DoxyCodeLine{00094\ end}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ re\ write}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{string}\ s\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\doxysection{Debug.\+h}
+\hypertarget{_debug_8h_source}{}\label{_debug_8h_source}\index{NickEnginesS245864\_01102024/Debug.h@{NickEnginesS245864\_01102024/Debug.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ DEBUGLOGGER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ DEBUGLOGGER\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Declare\ the\ DeBug\ function\ in\ the\ header}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }DeBug}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{static}\ DeBug\ *\ \_Log;}
+\DoxyCodeLine{00009\ \ \ \ \ FILE*\ DebugFile;}
+\DoxyCodeLine{00010\ \ \ \ \ std::string\ ERRORMSG\ =\ \textcolor{stringliteral}{"{}NULL"{}};}
+\DoxyCodeLine{00011\ \ \ \ \ std::string\ ERRORFILE\ =\ \textcolor{stringliteral}{"{}NULL"{}};}
+\DoxyCodeLine{00012\ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ DeBug();}
+\DoxyCodeLine{00014\ \ \ \ \ \string~DeBug();}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ ERRORNUM\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ DeBug*\ Log();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ printDebug(\ \textcolor{keywordtype}{int}\ Verbosity\ \ ,std::string\ ERRORMSG,\ ...);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum}\ Verbosity}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ none,\ \textcolor{comment}{//|0|\ not\ classed\ }}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ red,\ \textcolor{comment}{//\ |1|system|game\ breaking/\ could\ cause\ crash}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ yellow,\textcolor{comment}{//\ |2|error\ visiable\ to\ player}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ error\_green,\textcolor{comment}{//\ \ |3|error\ not\ visiable\ to\ player}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ warning,\textcolor{comment}{//\ \ |4|happened\ recovered\ from}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ note\textcolor{comment}{//\ |5|\ thing\ has\ happened}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

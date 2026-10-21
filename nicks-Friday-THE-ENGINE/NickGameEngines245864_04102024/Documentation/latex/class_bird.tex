@@ -1,0 +1,88 @@
+\doxysection{Bird Class Reference}
+\hypertarget{class_bird}{}\label{class_bird}\index{Bird@{Bird}}
+Inheritance diagram for Bird\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bird}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bird_a5d61d358e81f7c35d0906e2c2309ba24}\label{class_bird_a5d61d358e81f7c35d0906e2c2309ba24} 
+{\bfseries Bird} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\item 
+void \mbox{\hyperlink{class_bird_a04e8429a33a1ddce73e7753ecd94027d}{Apply\+Continuous\+Moment}} ()
+\item 
+void \mbox{\hyperlink{class_bird_a3dacd7326f7b3331c601dd757773af50}{On\+Event}} (My\+Event\+Types event\+Type, \mbox{\hyperlink{class_event}{Event}} \texorpdfstring{$\ast$}{*}data)
+\item 
+\Hypertarget{class_bird_ad49db0629362df520cdd3f938b97c4a2}\label{class_bird_ad49db0629362df520cdd3f938b97c4a2} 
+bool {\bfseries Collision\+Check} (\mbox{\hyperlink{class_base_entity}{Base\+Entity}} \texorpdfstring{$\ast$}{*}Colliding\+Against)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_entity}{Base\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transform}{Transform}} \& {\bfseries Get\+Transform} ()
+\item 
+virtual void {\bfseries Draw} ()
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Collider} ()
+\item 
+float {\bfseries Get\+Radius} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bird_acf11fa7ceb69c4580f0463e5b1a469d7}\label{class_bird_acf11fa7ceb69c4580f0463e5b1a469d7} 
+float {\bfseries Radius} \{ 10.\+0f \}
+\item 
+\Hypertarget{class_bird_ac30cebfcf4557aa05c70f0253fe4762b}\label{class_bird_ac30cebfcf4557aa05c70f0253fe4762b} 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+\+Renderer}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_base_entity}{Base\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_physics}{Physics}} {\bfseries phi}
+\item 
+float {\bfseries Radius}
+\item 
+\mbox{\hyperlink{class_bitmap}{Bitmap}} \texorpdfstring{$\ast$}{*} {\bfseries Map}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries Box\+Collider}
+\item 
+\mbox{\hyperlink{class_transform}{Transform}} {\bfseries transform}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_entity}{Base\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+\+Renderer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bird_a04e8429a33a1ddce73e7753ecd94027d}\index{Bird@{Bird}!ApplyContinuousMoment@{ApplyContinuousMoment}}
+\index{ApplyContinuousMoment@{ApplyContinuousMoment}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{ApplyContinuousMoment()}{ApplyContinuousMoment()}}
+{\footnotesize\ttfamily \label{class_bird_a04e8429a33a1ddce73e7753ecd94027d} 
+void Bird\+::\+Apply\+Continuous\+Moment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_entity}{Base\+Entity}}.
+
+\Hypertarget{class_bird_a3dacd7326f7b3331c601dd757773af50}\index{Bird@{Bird}!OnEvent@{OnEvent}}
+\index{OnEvent@{OnEvent}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{OnEvent()}{OnEvent()}}
+{\footnotesize\ttfamily \label{class_bird_a3dacd7326f7b3331c601dd757773af50} 
+void Bird\+::\+On\+Event (\begin{DoxyParamCaption}\item[{My\+Event\+Types}]{event\+Type}{, }\item[{\mbox{\hyperlink{class_event}{Event}} \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i___event_handeler}{I\+\_\+\+Event\+Handeler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nick\+Engines\+S245864\+\_\+01102024/Entity2.\+hpp\end{DoxyCompactItemize}

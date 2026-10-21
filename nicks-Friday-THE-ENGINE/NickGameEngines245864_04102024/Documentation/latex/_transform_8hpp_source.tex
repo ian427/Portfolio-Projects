@@ -1,0 +1,83 @@
+\doxysection{Transform.\+hpp}
+\hypertarget{_transform_8hpp_source}{}\label{_transform_8hpp_source}\index{NickEnginesS245864\_01102024/Transform.hpp@{NickEnginesS245864\_01102024/Transform.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRANSFORM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRANSFORM\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include<glm.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<gtx\(\backslash\)transform.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }glm;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }Transform}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ Transform(\textcolor{keyword}{const}\ vec3\&\ pos\ =\ vec3(0),\ \textcolor{keyword}{const}\ vec3\&\ rot\ =\ vec3(0),\ \textcolor{keyword}{const}\ vec3\&\ scale\ =\ vec3(1))\ :}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ m\_position(pos),}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ m\_rotation(rot),}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ m\_scale(scale)}
+\DoxyCodeLine{00016\ \ \ \ \ \{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \string~Transform()}
+\DoxyCodeLine{00018\ \ \ \ \ \{\}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{inline}\ mat4\ GetModel()\textcolor{keyword}{const}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ mat4\ posMatrix\ =\ translate(m\_position);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ mat4\ rotXMatrix\ =\ rotate(m\_rotation.x,\ vec3(1,\ 0,\ 0));}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ mat4\ rotYMatrix\ =\ rotate(m\_rotation.y,\ vec3(0,\ 1,\ 0));}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ mat4\ rotZMatrix\ =\ rotate(m\_rotation.z,\ vec3(0,\ 0,\ 1));}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ mat4\ scaleXMatrix\ =\ scale(m\_scale);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ mat4\ rotMatrix\ =\ rotZMatrix\ *\ rotYMatrix\ *\ rotXMatrix;\textcolor{comment}{//MUST\ BE\ BACKWARDS}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ posMatrix\ *\ rotMatrix\ *\ scaleXMatrix;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ vec3\ GetPosition()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ m\_position;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ SetPosition(vec3\ newpos)}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ m\_position\ =\ newpos;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ vec3\ GetRotation()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ m\_rotation;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ SetRotation(vec3\ newrotation)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ m\_rotation\ =\ newrotation;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ vec3\ GetScale()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ m\_scale;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ SetScale(vec3\ newscale)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ m\_scale\ =\ newscale;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ vec3\ m\_position;}
+\DoxyCodeLine{00069\ \ \ \ \ vec3\ m\_rotation;}
+\DoxyCodeLine{00070\ \ \ \ \ vec3\ m\_scale;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !TRANSFORM\_H}}
+
+\end{DoxyCode}

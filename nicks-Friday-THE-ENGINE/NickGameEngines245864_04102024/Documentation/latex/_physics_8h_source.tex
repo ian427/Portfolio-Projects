@@ -1,0 +1,49 @@
+\doxysection{Physics.\+h}
+\hypertarget{_physics_8h_source}{}\label{_physics_8h_source}\index{NickEnginesS245864\_01102024/Physics.h@{NickEnginesS245864\_01102024/Physics.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//squrecolliders}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//gravity}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ //apply\ movement}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//collision\ event}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glew.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<glm.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }glm;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics}{Physics}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ public\ :}
+\DoxyCodeLine{00016\ \ \ \ \ vec3\ CurrentForces\ ;}
+\DoxyCodeLine{00017\ \ \ \ \ vec3\ Forces;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ Mass;}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ vec3\ AccumulateForces(\textcolor{keyword}{const}\ std::vector<vec3>\ forces);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyForces(\mbox{\hyperlink{class_transform}{Transform}}\&\ transform);\textcolor{comment}{//to\ move}}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ ContinuousMoment(\mbox{\hyperlink{class_transform}{Transform}}\ transform,\ vec3\ Move);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//virtual\ void\ TestMethod()//\ default}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ \ int\ i\ =\ 0;}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ \ //do\ stuff}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//virtual\ void\ TestMethodPure()\ =0;}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ AABBIntersection\ (\mbox{\hyperlink{class_collider}{Collider}}*\ Collider1,\ \mbox{\hyperlink{class_collider}{Collider}}*\ Collider2);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdatePhysics();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ Move(\mbox{\hyperlink{class_transform}{Transform}}\&\ transform,\ vec3\ movement);}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<vec3>\ forces;}
+\DoxyCodeLine{00041\ \ \ \ \ std::vector<vec3>\ impulses;}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+
+\end{DoxyCode}
